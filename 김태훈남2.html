@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>♥김태훈의 공부교실♥</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: url(엘모.png) right bottom no-repeat;
+  opacity:0.7;
+}
+
+/* Style the header */
+.header {
+  background-image: linear-gradient(to bottom right, RGB(76, 131, 190), RGB(76, 185, 190));
+  padding: 30px;
+  text-align: center;
+  color:RGB(255,255,255,0.7);
+  text-shadow: 2px 2px 4px RGB(76, 131, 190);
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: RGB(182, 215, 231);
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: black;
+  margin-top: 20px;
+}
+
+pre {
+  background-color: #eee;
+  width: 400px;
+  height: 600px;
+  border: 1px dotted black;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.a:link, .a:visited {
+  background-color: white;
+  border:3px solid RGB(76, 131, 190);
+  color: black;
+  padding: 30px;
+  margin:20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: -4px 4px RGB(182, 215, 231);
+}
+
+.a:hover, .a:active {
+  background-color: RGB(76, 131, 190);
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 style="font-size:100px;">김태훈의 공부교실^^</h1>
+
+</div>
+
+<div class="topnav">
+  <a href="index.html">자료구조</a>
+  <a href="김태훈남2.html">객체지향언어</a>
+   <a href="김태훈남3.html">html</a>
+
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>입력파일</h2>
+    <pre> 
+      #include< iostream>
+
+ #include< fstream>
+using namespace std;
+struct insa{
+char name[20];
+int ko,ma,en;
+
+};
+void main()
+{
+insa man[]={ 
+{"김태훈",100,100,100},
+{"김예빈",10,100,37},
+{"김멋짐",28,39,85}
+};
+ofstream fout;
+fout.open("insa.dat");
+for(int i=0; i<3; i++)
+fout<< man[i].name<<" "<< man[i].ko<<" "
+<< man[i].ma<<" "<< man[i].en<< endl;
+fout.close();
+
+}
+
+
+</pre>
+  </div>
+  
+  <div class="column">
+    <h2>출력파일 </h2>
+    <pre>
+
+#include< iostream>
+#include< fstream>
+using namespace std;
+struct insa{
+char name[20];int ko,ma,en;
+
+};
+void main()
+{
+
+float avg[3];
+char score[]=" F D0D+C0C+B0B+A0A+A+"
+float b;
+
+int c[3];
+
+
+insa man[3];
+ifstream fin;
+fin.open("insa.dat");
+if(fin.fail()){
+cout<<"파일오픈에 실패했습니다."<<  endl;
+return
+}
+for(int i=0; i<3; i++){
+fin>>man[i].name>>man[i].ko>>man[i].ma>>man[i].en;
+
+
+
+total[i]=man[i].ko+man[i].ma+man[i].en;
+avg[i] = total[i]/3.0;
+
+b = avg[i]/10;
+b -= 5;
+c[i]=(int)(b*2);
+if(c[i] < 1) c[i]=1;
+}
+
+for(int i=0; i<3; i++){
+cout<< man[i].name << " "<< man[i].ko<<" "<< man[i].ma<<
+" "<< man[i].en<<" "<< total[i]<< " "<< avg[i]<<" "<< 
+score[c[i]*2-1]<< score[c[i]*2]<< endl;
+fin.close();
+}
+
+ofstream fout;
+fout.open("malra.dat");
+
+for(int i=0; i<3; i++){
+fout<< man[i].name<<" "<< man[i].ko<<" "<<
+ man[i].ma<<" "<< man[i].en<<" "<< total[i]
+ <<" "<< avg[i]<<" "<< score[c[i]*2-1]<< 
+ score[c[i]*2]<< endl;
+}
+fout.close();
+
+}
+</pre>
+  </div>
+  
+  <div class="column">
+    <h2>강의자료</h2><br><br><br>
+    <a class="a" href="그래프.pdf" target="_blank"><b>11장 - 그래프</b></a><br>
+    <a class="a" href="정렬.pdf" target="_blank"><b>12장 -정렬 </b></a><br>
+
+  </div>
+</div>
+<div class="footer">
+  <img src="얼짱김태훈.gif" alt="Italian Trulli" style="height:50px;">
+</div>
+
+</body>
+</html>
